@@ -1,13 +1,68 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="UTF-8"><title>Accueil</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - 1re Informatique</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .card {
+      border: none;
+      transition: transform 0.2s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
 <body>
-  <h1>Bienvenue sur le site de la 1re Informatique</h1>
-  <ul>
-    <li><a href="septembre.html">📘 Cours théorique de septembre</a></li>
-    <li><a href="vocabulaire.html">📄 Fiche vocabulaire</a></li>
-    <li><a href="fichiers.html">🧪 Exercice interactif</a></li>
-  </ul>
+  <header>
+    <h1>🎓 Bienvenue sur le site de la 1re Informatique</h1>
+    <p class="lead">Découvre tes cours, fiches et exercices en ligne</p>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow text-center">
+          <div class="card-body">
+            <h5 class="card-title">📘 Cours théorique de septembre</h5>
+            <a href="septembre.html" class="btn btn-primary mt-3">Voir le cours</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow text-center">
+          <div class="card-body">
+            <h5 class="card-title">📄 Fiche vocabulaire</h5>
+            <a href="vocabulaire.html" class="btn btn-success mt-3">Accéder à la fiche</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow text-center">
+          <div class="card-body">
+            <h5 class="card-title">🧪 Exercice interactif</h5>
+            <a href="fichiers.html" class="btn btn-warning mt-3">Faire l'exercice</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-muted py-3 border-top">
+    © 2025 Joseph D’Atria – New Dance School
+  </footer>
 </body>
 </html>

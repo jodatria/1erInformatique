@@ -1,1 +1,184 @@
-<html><body><h1>Exercice fichiers</h1></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice - Gestion des fichiers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .question {
+      margin-top: 2rem;
+    }
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+    .correction {
+      font-size: 0.9rem;
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container py-5" id="quiz-container">
+    <h1 class="mb-4">🗂️ Exercice interactif : Gestion des fichiers</h1>
+    <p>Réponds aux questions ci-dessous pour tester tes connaissances :</p>
+
+    <div class="question">
+      <p><strong>1. Quel outil permet de classer les fichiers dans un ordinateur ?</strong></p>
+      <select class="form-select" id="q1">
+        <option value="">Choisis une réponse</option>
+        <option value="A">Un dossier</option>
+        <option value="B">Une souris</option>
+        <option value="C">Un écran</option>
+      </select>
+      <div id="c-q1" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>2. Quelle extension correspond à un fichier image ?</strong></p>
+      <select class="form-select" id="q2">
+        <option value="">Choisis une réponse</option>
+        <option value="A">.jpg</option>
+        <option value="B">.docx</option>
+        <option value="C">.mp3</option>
+      </select>
+      <div id="c-q2" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>3. Quelle action permet de modifier le nom d’un fichier ?</strong></p>
+      <select class="form-select" id="q3">
+        <option value="">Choisis une réponse</option>
+        <option value="A">Le renommer</option>
+        <option value="B">Le supprimer</option>
+        <option value="C">Le copier</option>
+      </select>
+      <div id="c-q3" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>4. Que signifie l'icône de la corbeille sur le bureau ?</strong></p>
+      <select class="form-select" id="q4">
+        <option value="">Choisis une réponse</option>
+        <option value="A">Elle ouvre un document</option>
+        <option value="B">Elle contient les fichiers supprimés</option>
+        <option value="C">Elle permet de créer un dossier</option>
+      </select>
+      <div id="c-q4" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>5. Quelle action permet d'effacer définitivement un fichier ?</strong></p>
+      <select class="form-select" id="q5">
+        <option value="">Choisis une réponse</option>
+        <option value="A">Le renommer</option>
+        <option value="B">Le mettre à la corbeille</option>
+        <option value="C">Vider la corbeille</option>
+      </select>
+      <div id="c-q5" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>6. Que fait-on lorsqu'on “exporte” un fichier ?</strong></p>
+      <select class="form-select" id="q6">
+        <option value="">Choisis une réponse</option>
+        <option value="A">On l’imprime</option>
+        <option value="B">On le convertit dans un autre format</option>
+        <option value="C">On le supprime</option>
+      </select>
+      <div id="c-q6" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>7. Quelle extension correspond à un fichier texte ?</strong></p>
+      <select class="form-select" id="q7">
+        <option value="">Choisis une réponse</option>
+        <option value="A">.mp4</option>
+        <option value="B">.txt</option>
+        <option value="C">.jpg</option>
+      </select>
+      <div id="c-q7" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>8. Comment reconnaître un périphérique d'entrée ?</strong></p>
+      <select class="form-select" id="q8">
+        <option value="">Choisis une réponse</option>
+        <option value="A">Il affiche des images</option>
+        <option value="B">Il envoie des données à l'ordinateur</option>
+        <option value="C">Il stocke des fichiers</option>
+      </select>
+      <div id="c-q8" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>9. Que signifie un fichier nommé “exercice.docx” ?</strong></p>
+      <select class="form-select" id="q9">
+        <option value="">Choisis une réponse</option>
+        <option value="A">C'est une image</option>
+        <option value="B">C'est un fichier Word</option>
+        <option value="C">C'est une vidéo</option>
+      </select>
+      <div id="c-q9" class="correction"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>10. Comment organiser les fichiers sur le bureau ?</strong></p>
+      <select class="form-select" id="q10">
+        <option value="">Choisis une réponse</option>
+        <option value="A">En les mettant dans un dossier</option>
+        <option value="B">En les supprimant</option>
+        <option value="C">En les renvoyant par mail</option>
+      </select>
+      <div id="c-q10" class="correction"></div>
+    </div>
+
+    <button class="btn btn-success mt-4" onclick="corriger()">✅ Vérifier mes réponses</button>
+    <button class="btn btn-outline-primary mt-4 ms-2" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+    <div id="resultat" class="mt-4"></div>
+    <a href="index.html" class="btn btn-secondary mt-5">⬅️ Retour au site</a>
+  </div>
+
+  <script>
+    function corriger() {
+      const reponses = {
+        q1: 'A',
+        q2: 'A',
+        q3: 'A',
+        q4: 'B',
+        q5: 'C',
+        q6: 'B',
+        q7: 'B',
+        q8: 'B',
+        q9: 'B',
+        q10: 'A'
+      };
+
+      let score = 0;
+      let total = Object.keys(reponses).length;
+
+      for (let q in reponses) {
+        const select = document.getElementById(q);
+        const val = select.value;
+        const correction = document.getElementById("c-" + q);
+
+        select.classList.remove("is-invalid");
+        correction.innerHTML = "";
+
+        if (val === reponses[q]) {
+          score++;
+        } else {
+          select.classList.add("is-invalid");
+          const selectedText = select.options[select.selectedIndex]?.text;
+          correction.innerHTML = `<span class="incorrect">❌ Mauvaise réponse :</span> "${selectedText}"<br><span class="correction">✅ Bonne réponse : "${select.querySelector('option[value="' + reponses[q] + '"]').text}"</span>`;
+        }
+      }
+
+      const resultat = document.getElementById('resultat');
+      resultat.innerHTML = `<h4>Tu as ${score} bonne(s) réponse(s) sur ${total}.</h4>`;
+    }
+  </script>
+</body>
+</html>
